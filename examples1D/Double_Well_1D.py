@@ -1,5 +1,9 @@
-# File: ./examples1D/Lin_1D_E.py
+# File: ./examples1D/Double_Well_1D.py
+# Run as    python3 bpm.py Double_Well_1D 1D
 # Beating in a double well potential
+# A double well potential is defined. The initial condition concentrates the
+# wavefunction around one of the minima. The simulation shows that, periodically, the
+# energy tunnels between the two wells.
 
 
 import numpy as np
@@ -7,7 +11,7 @@ import numpy as np
 Nx = 600						# Grid points
 Ny = Nx
 dt = 0.001					# Evolution step
-tmax = 30		# Propagation end
+tmax = 30		            # End of propagation
 xmax = 5					# x-window size
 ymax = xmax					# y-window size
 images = 300				# number of .png images

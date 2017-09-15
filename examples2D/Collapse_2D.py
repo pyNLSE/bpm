@@ -1,24 +1,27 @@
-# File: ./examples1D/Lin_1D_A.py
-# Interference of two Gaussian wave packets
-
+# File: ./examples2D/Collapse_2D.py
+# Run as    python3 bpm.py Collapse_2D 2D
+# Self-similar collapse of the Townes' profile
 
 import numpy as np
 
 Nx = 500						# Grid points
 Ny = 500
 dt = 0.005					# Evolution step
-tmax = 7		# Propagation end
+tmax = 7		            # End of propagation
 xmax = 20					# x-window size
 ymax = xmax					# y-window size
 images = 70				# number of .png images
 absorb_coeff = 0		# 0 = periodic boundary
-output_choice = 2       # If 1, it plots on the screen but does not save the images
+output_choice = 3      # If 1, it plots on the screen but does not save the images
 							# If 2, it saves the images but does not plot on the screen
 							# If 3, it saves the images and plots on the screen
-fixmaximum= 0            # Fixes a maximum scale of |psi|**2 for the plots. If 0, it does not fix it.
+fixmaximum= 2           # Fixes a maximum scale of |psi|**2 for the plots. If 0, it does not fix it.
 
-def psi_0(x,y):				# Initial wavefunction
+def psi_0(x,y):				
 
+# Initial wavefunction: the Townes' profile (computed elsewhere) is loaded
+# as initial data. With it, we build the initial condition for self-similar 
+# collapse. The singularity should form at t=ts
 
 	my_data = np.genfromtxt('./examples2D/townes_profile.csv', delimiter=',')
 	r=my_data[0,:]
@@ -43,7 +46,7 @@ def psi_0(x,y):				# Initial wavefunction
 
 	return psi0;
 
-def V(x,y,t,psi):		# Free propagation
+def V(x,y,t,psi):		# Kerr (cubic) focusing nonlinearity
 
 	V = - abs(psi)**2
 	return V;

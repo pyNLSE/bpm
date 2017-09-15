@@ -1,13 +1,16 @@
-# File: ./examples/example_01.py
-# Initial condition: a 2D Gaussian with tilting angle and curvature
-# Material: A Kerr focusing nonlinear optical material
+# File: ./examples1D/Diffraction_Slit_1D.py
+# Run as    python3 bpm.py Diffraction_Slit_1D 1D
+# Diffraction by a slit
+# The initial condition is a flat function within a finite domain, modeling
+# the passage of a wide wave through a slit. The evolution generates the typical
+# diffraction pattern
 
 import numpy as np
 
 Nx = 1000						# Grid points
 Ny = Nx
 dt = 0.0001					# Evolution step
-tmax = .4		# Propagation end
+tmax = .4		            # End of propagation
 xmax = 30 					# x-window size
 ymax = xmax					# y-window size
 images = 100				# number of .png images
@@ -19,7 +22,9 @@ fixmaximum= 0               # Fixes a maximum scale of |psi|**2 for the plots. I
 
 def psi_0(x,y):				# Initial wavefunction
 
-	f = 0.j+np.piecewise(x, [abs(x)<.5, abs(x)>=.5],[1,0])  # A step function, modelling the passage of a plane wave through a slit
+# A step function, modelling the passage of a plane wave through a slit
+
+	f = 0.j+np.piecewise(x, [abs(x)<.5, abs(x)>=.5],[1,0])  
 
 	return f;
 

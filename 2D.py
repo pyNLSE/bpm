@@ -2,10 +2,7 @@
 
 import numpy as np
 import pyfftw
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-plt.rcParams["text.usetex"] = False
 import os
 from matplotlib import cm
 
@@ -55,7 +52,7 @@ def absorb(x,y,xmax,ymax,dt,absorb_coeff):
 
 def savepsi(Ny,psi):
 
-	return abs(psi[:,Ny//2+1])**2
+	return abs(psi[:,Ny/2+1])**2
 
 # Defines graphic output: a contour plot two-dimensional figure and the y=0 1d cut. 
 # For both figures, |psi|^2 is depicted
@@ -86,15 +83,15 @@ def output(x,y,psi,n,t,folder,output_choice,fixmaximum):
     # Makes the contour plot:
 
 	toplot=abs(psi)**2
-	if fixmaximum>0:
-		toplot[toplot>fixmaximum]=fixmaximum    	
+	if fixmaximum>0:   # This fixes the minimum and maximum of the color code and
+	                   # the color bar, ensuring that it is [0,fixmaximum]
+		toplot[toplot>fixmaximum]=fixmaximum  
+		toplot[0,0]=0
+		toplot[0,1]=fixmaximum    	
     
 
 	surf = plt.contourf(x, y, toplot, 100, cmap=cm.jet, linewidth=0, antialiased=False)
 
-
-	if fixmaximum>0:            # chooses the maximum for the color scale
-		plt.clim(0,fixmaximum)
   
 	cbar=plt.colorbar()          # colorbar
 	cbar.set_label('$|\psi|^2$',fontsize=14)
@@ -125,7 +122,7 @@ def output(x,y,psi,n,t,folder,output_choice,fixmaximum):
 	plt.rc('font', family='serif')	# LaTeX font
 
 	Ny=len(y[1,:])
-	plot = plt.plot(x[:,1], toplot[:,Ny//2+1])  # makes the plot
+	plot = plt.plot(x[:,1], toplot[:,Ny/2+1])  # makes the plot
 
 	plt.xlabel('$x$')                 # choose axes labels, title of the plot and axes range
 	plt.ylabel('$|\psi|^2$')

@@ -1,5 +1,9 @@
-# File: ./examples1D/Lin_1D_C.py
-# Scattering of a wave packet by a barrier
+# File: ./examples1D/Rectangular_Barrier_1D.py
+# Run as    python3 bpm.py Rectangular_Barrier_1D 1D
+# A Gaussian wave packet impinges on a rectangular barrier. Part of the wave
+# is reflected, part of the wave is transmitted.
+
+
 
 import numpy as np
 
@@ -18,9 +22,11 @@ fixmaximum= 1.05             # Fixes a maximum scale of |psi|**2 for the plots. 
 
 def psi_0(x,y):				# Initial wavefunction
 
-	vx=10
-	f=0.j+np.exp(-((x+15)/4)**2)    # A Gaussian wave packet moving rightwards
-	f*=np.exp(1.j*vx*x)
+# A Gaussian wave packet moving rightwards
+
+	vx=10     # value of the initial velocity
+	f=0.j+np.exp(-((x+15)/4)**2)  # Gaussian profile    
+	f*=np.exp(1.j*vx*x)   # Multiply by an x-dependent phase to introduce velocity
 
 	return f;
 

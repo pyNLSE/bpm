@@ -2,10 +2,7 @@
 
 import numpy as np
 import pyfftw
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-plt.rcParams["text.usetex"] = False
 import os
 from matplotlib import cm
 
@@ -148,8 +145,7 @@ def movie(folder):
 
 	str1 ='opt="vbitrate=4320000:mbd=2:keyint=132:v4mv:vqmin=3:lumi_mask=0.07:dark_mask=0.2:mpeg_quant:scplx_mask=0.1:tcplx_mask=0.1:naq" '
 	str2 ='mencoder "mf://'+folder+'/fig*.png" -mf fps=25 -o /dev/null -ovc lavc -lavcopts vcodec=mpeg4:vpass=1:$opt'
-	#str3 ='mencoder "mf://'+folder+'/fig*.png" -mf fps=25 -o ./'+folder+'/movie_'+examplename+'.avi -ovc lavc -lavcopts vcodec=mpeg4:vpass=2:$opt'
-	str3 ='mencoder "mf://'+folder+'/fig*.png" -mf fps=25 -o '+folder+'/movie_.avi -ovc lavc -lavcopts vcodec=mpeg4:vpass=2:$opt'
+	str3 ='mencoder "mf://'+folder+'/fig*.png" -mf fps=25 -o ./'+folder+'/movie_'+examplename+'.avi -ovc lavc -lavcopts vcodec=mpeg4:vpass=2:$opt'
 	
 
 	os.system(str1)

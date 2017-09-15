@@ -1,13 +1,15 @@
-# File: ./examples/example_01.py
-# Initial condition: a 2D Gaussian with tilting angle and curvature
-# Material: A Kerr focusing nonlinear optical material
+# File: ./examples1D/Solitons_in_phase_1D.py
+# Run as    python3 bpm.py Solitons_in_phase_1D 1D
+# Encounter of two solitons in phase, which traverse each other unaffected.
+# During the collision, an interference pattern is generated.
+
 
 import numpy as np
 
 Nx = 500						# Grid points
 Ny = Nx
 dt = 0.001					# Evolution step
-tmax = 5		# Propagation end
+tmax = 5		            # End of propagation
 xmax = 10 					# x-window size
 ymax = xmax					# y-window size
 images = 100				# number of .png images
@@ -18,6 +20,8 @@ output_choice = 3        # If 1, it plots on the screen but does not save the im
 fixmaximum= 1.2               # Fixes a maximum scale of |psi|**2 for the plots. If 0, it does not fix it.
 
 def psi_0(x,y):				# Initial wavefunction
+
+# Two solitons heading each other in phase coincidence
 
 	x01=-5
 	x02=-x01
@@ -31,7 +35,7 @@ def psi_0(x,y):				# Initial wavefunction
 
 	return f;
 
-def V(x,y,t,psi):		# Nonlinear material 
+def V(x,y,t,psi):		# A cubic attractive (focusing) nonlinearity
 
 	V = - (abs(psi))**2 
 	return V;

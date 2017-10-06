@@ -12,7 +12,7 @@ dt = 0.001					# Evolution step
 tmax = 80		            # End of propagation 
 xmax = 8 					# x-window size
 ymax = xmax					# y-window size
-images = 800				# number of .png images
+images = 800				# number of .png images  
 absorb_coeff = 0		# 0 = periodic boundary
 output_choice = 3     # If 1, it plots on the screen but does not save the images
 							# If 2, it saves the images but does not plot on the screen

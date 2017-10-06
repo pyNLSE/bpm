@@ -3,6 +3,7 @@
 # A Gaussian beam impinges on a mask that generates a diffaction pattern with
 # vortices of different topological charges.
 
+
 # NOTICE: This example uses a fine computational grid, it uses a lot of memory 
 # and takes some time to run. It is possible to reduce Nx, Ny and take a larger dt
 # in order to obtain approximate results with less computational resources.

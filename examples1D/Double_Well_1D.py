@@ -11,10 +11,10 @@ import numpy as np
 Nx = 600						# Grid points
 Ny = Nx
 dt = 0.001					# Evolution step
-tmax = 30		            # End of propagation
+tmax = 30		            # End of propagation 
 xmax = 5					# x-window size
 ymax = xmax					# y-window size
-images = 300				# number of .png images
+images = 300				# number of .png images  
 absorb_coeff = 20		# 0 = periodic boundary
 output_choice = 3         # If 1, it plots on the screen but does not save the images
 							# If 2, it saves the images but does not plot on the screen

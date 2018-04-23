@@ -13,7 +13,7 @@ The .zip file contains the code and twenty examples. After unzipping it, example
 In notes_code.pdf, detailed explanations on the code are provided, together with simple installation guidelines for the required software (Python and Mencoder) 
 
 
-This material is part of the paper [AJP submission]. Please refer to it if you use this software in a publication.
+This material is part of the paper [European J. Physics submission]. Please refer to it if you use this software in a publication.
 
 We have also prepared video tutorials that accompany this note.  The videos can be found at the following 
 links: 

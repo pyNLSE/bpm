@@ -1,6 +1,10 @@
 # bpm
 A simple Python-based open source software library for the numerical simulation of the linear or nonlinear time-dependent Schrödinger equation in one and two dimensions.
 
+Article:
+Eur. J. Phys. 39 (2018) 055802
+https://doi.org/10.1088/1361-6404/aac999
+
 You can download the .zip file from the "Clone or download" button
 
 The .zip file contains the code and twenty examples. After unzipping it, examples can be run from the directory where bpm.py is, by writing in the command line, for instance:

@@ -1,7 +1,7 @@
 # bpm
 A simple Python-based open source software library for the numerical simulation of the linear or nonlinear time-dependent Schrödinger equation in one and two dimensions.
 
-  - Eur. J. Phys. 39 (2018) 055802: https://doi.org/10.1088/1361-6404/aac999
+  - Article published: Eur. J. Phys. 39 (2018) 055802: https://doi.org/10.1088/1361-6404/aac999
 
 You can download the .zip file from the "Clone or download" button
 
